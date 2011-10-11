@@ -1,11 +1,59 @@
-.htaccess
-config.php
-config_override.php
-include/javascript/sugar_grp1.js
-include/javascript/sugar_grp1_yui.js
-include/javascript/sugar_grp_yui_widgets.js
-include/javascript/sugar_grp_yui_widgets.css
-include/javascript/sugar_grp_yui2.js
-include/javascript/sugar_grp_overlib.js
-include/javascript/sugar_grp_emails.js
-include/javascript/sugar_grp_quickcomp.js
+# git-ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+# For a project mostly in C, the following would be a good set of
+# exclude patterns (uncomment them if you want to use them):
+# *.[oa]
+# *~
+
+# Archivos a ignorar en cualquier directorio ( el pattern empieza sin barra )
+*~
+.svn/
+*.log
+*.xml
+*.bak
+*.log.lck
+
+# La carpeta private se puede usar para guardar archivos temporales y privados de cada desarrollador.
+/private/*
+
+/log/ws/*.xml
+
+# Los config del raiz no se comitean, por convencion cada entorno debe configurarlos
+# La barra inicial indica comenzar a matchear en el raiz
+# ( de lo contrario ignorara todos los config* del proyecto )
+/config*
+/tools/config*
+
+/tools/cache
+# ignorar enlaces simbolicos de tools
+/tools/include
+/tools/modules
+/tools/custom
+/tools/outputs/*
+
+# ignorar todo lo que esta en cache, salvo cache/upload/
+cache/*
+!cache/upload/
+cache/upload/import_project/
+cache/upload/*.dot
+
+*.testdox
+*#
+/test/reports/*.txt
+/test/reports/testdox/*.txt
+
+/modules/ZuckerReports/archive/
+
+/custom/working/
+/custom/history/
+/custom/modulebuilder/
+
+#ignorar todos los .ext.php en los modulos
+/custom/modules/*/Ext/*/*.ext.php
+
+# ignorar archivo etags de emacs
+/TAGS
+/tags
+
+
+/tools/data/sales_export_output.csv
